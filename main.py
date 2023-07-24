@@ -1,16 +1,17 @@
-# This is a sample Python script.
+def remove(self, data):
+    if self.head is None:
+        return
 
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+    if self.head.data == data:
+        self.head = self.head.next
+        return
 
+    current = self.head
+    prev = None
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    while current:
+        if current.data == data:
+            prev.next = current.next
+            return
+        prev = current
+        current = current.next
